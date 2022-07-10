@@ -1,0 +1,60 @@
+html{
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url(GraphikExtralight.otf);
+}
+
+@font-face {
+    font-family: 'Graphik Italic';
+    src: url(GraphikLightItalic.otf);
+}
+
+body{
+    background-color: #102ea0;
+    width: 45%;
+    top: 50%;
+    left: 67%;
+    margin:0%;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    font-size: 28px;
+    font-family: 'Graphik', Arial, Helvetica, sans-serif;
+    color:#ffffff;
+}
+
+div{
+    background-color: #2543aa;
+    border-radius: 24px;
+    margin: 16px 0 36px;
+    padding: 10px 24px;
+    max-width:335px;
+    position:relative;
+    font-family: 'Graphik'Arial, Helvetica, sans-serif;
+}
+
+img{
+    position:fixed;
+    left:-300px;
+    top:40px;
+    border-radius:5%;
+    box-shadow: 5px 5px #2c42a4;
+}
+
+a.urls:link{
+    color:#ffffff;
+    text-decoration: none;
+}
+
+a.urls:hover{
+    color:#ffffff;
+    text-decoration: underline;
+    font-family: 'Graphik Italic', Arial, Helvetica, sans-serif;
+}
+
+a.urls:visited{
+    color:#ffffff;
+    text-decoration: none;
+}
