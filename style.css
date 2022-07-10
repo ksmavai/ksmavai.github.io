@@ -14,12 +14,12 @@ html{
 
 body{
     background-color: #102ea0;
-    width: 45%;
+    width: 35%;
     top: 50%;
     left: 67%;
     margin:0%;
     position:absolute;
-    transform:translate(-50%,-50%);
+    transform:translate(-67%,-50%);
     font-size: 28px;
     font-family: 'Graphik', Arial, Helvetica, sans-serif;
     color:#ffffff;
