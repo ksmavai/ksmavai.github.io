@@ -12,6 +12,11 @@ html{
     src: url(GraphikExtralightItalic.otf);
 }
 
+@font-face {
+    font-family: 'Belle De Mai';
+    src: url(belledemairegular.otf);
+}
+
 body{
     background-color: #102ea0;
     width: 35%;
@@ -21,7 +26,7 @@ body{
     position:absolute;
     transform:translate(-67%,-50%);
     font-size: 28px;
-    font-family: 'Graphik', Arial, Helvetica, sans-serif;
+    font-family: 'Belle De Mai', Arial, Helvetica, sans-serif;
     color:#ffffff;
 }
 
@@ -50,7 +55,7 @@ a.urls:link{
 
 a.urls:hover{
     color:#ffffff;
-    text-decoration: underline;
+    text-decoration: none;
     font-family: 'Graphik Italic', Arial, Helvetica, sans-serif;
 }
 
