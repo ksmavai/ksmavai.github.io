@@ -12,11 +12,6 @@ html{
     src: url(GraphikExtralightItalic.otf);
 }
 
-@font-face {
-    font-family: 'Belle De Mai';
-    src: url(belledemairegular.otf);
-}
-
 body{
     background-color: #102ea0;
     width: 35%;
@@ -26,7 +21,7 @@ body{
     position:absolute;
     transform:translate(-67%,-50%);
     font-size: 28px;
-    font-family: 'Belle De Mai', Arial, Helvetica, sans-serif;
+    font-family: 'Graphik', Arial, Helvetica, sans-serif;
     color:#ffffff;
 }
 
