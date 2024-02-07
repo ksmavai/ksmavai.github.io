@@ -3,8 +3,8 @@ html{
 }
 
 ::selection{
-    color:#fdf9ee;
-    background: #c8972e;
+    color: #ffffff;
+    background: #2c65f0;
 }
 
 /* @font-face {
