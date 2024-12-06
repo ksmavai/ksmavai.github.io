@@ -393,13 +393,13 @@ function changeStyles() {
             header1bg.style.borderColor = '#7d4a33';
 
             infot1.style.fontFamily = 'Frutiger';
-            infot1.style.fontSize = "80%";
+            infot1.style.fontSize = "90%";
             infot2.style.fontFamily = 'Frutiger';
-            infot2.style.fontSize = "80%";
+            infot2.style.fontSize = "90%";
             infot3.style.fontFamily = 'Frutiger';
-            infot3.style.fontSize = "80%";
+            infot3.style.fontSize = "90%";
             infot4.style.fontFamily = 'Frutiger';
-            infot4.style.fontSize = "80%";
+            infot4.style.fontSize = "90%";
 
             header2.style.fontFamily = 'Gill Sans';
 
