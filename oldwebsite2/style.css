@@ -1,8 +1,8 @@
-html{
+html {
     scroll-behavior: smooth;
 }
 
-::selection{
+::selection {
     color: #ffffff;
     background: #2c65f0;
 }
@@ -11,76 +11,92 @@ html{
     font-family: 'Aileron';
     src: url('fonts/Aileron.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'Andale Mono';
     src: url('fonts/Andale Mono.TTF') format('opentype');
 }
+
 @font-face {
     font-family: 'Coolvetica';
     src: url('fonts/Coolvetica.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'FatFrank';
     src: url('fonts/FatFrank.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'Frutiger';
     src: url('fonts/Frutiger.ttf') format('opentype');
 }
+
 @font-face {
     font-family: 'Garnett Semibold';
     src: url('fonts/Garnett Semibold.ttf') format('opentype');
 }
+
 @font-face {
     font-family: 'Gill Sans';
     src: url('fonts/Gill Sans.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'Graphik';
     src: url('fonts/Graphik.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'Halyard Display';
     src: url('fonts/HalyardDisplay.ttf') format('opentype');
 }
+
 @font-face {
     font-family: 'Helvetica Neue';
     src: url('fonts/Helvetica Neue.ttf') format('opentype');
 }
+
 @font-face {
     font-family: 'IBM Plex Mono Medium';
     src: url('fonts/IBM Plex Mono Medium.ttf') format('opentype');
 }
+
 @font-face {
     font-family: 'Inter';
     src: url('fonts/Inter.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'NeueMontreal-Medium';
     src: url('fonts/NeueMontreal-Medium.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'New Spirit Bold Condensed';
     src: url('fonts/New Spirit Bold Condensed.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'PPangramSansRounded-Bold';
     src: url('fonts/PPPangramSansRounded-Bold.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'Sohne-Fett';
     src: url('fonts/Sohne-Fett.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'W95FA';
     src: url('fonts/W95FA.otf') format('opentype');
 }
 
-body{
+body {
     background: #f4bb40;
     font-size: 28px;
     transition: 0.5s;
-    background-size:auto;
+    background-size: auto;
 }
 
 .bg1 {
@@ -120,7 +136,7 @@ body{
     display: inline-block;
 }
 
-.rectangle{
+.rectangle {
     transition: 0.5s;
     background-color: #fefae2;
     color: black;
@@ -133,14 +149,14 @@ body{
     left: 3.5%;
     height: 92.5%;
     position: absolute;
-    font-family: 'Graphik',Arial, Helvetica, sans-serif;
+    font-family: 'Graphik', Arial, Helvetica, sans-serif;
     box-shadow: 0 0 0 1px #0000000d, 0 1px 4px #0000001a;
     overflow: hidden;
     z-index: -5;
     overflow-y: auto;
 }
 
-hr{
+hr {
     border-style: solid;
     border-width: 1px;
     height: 5px;
@@ -149,15 +165,15 @@ hr{
     left: -5%;
 }
 
-.hrl{
+.hrl {
     transition: 0.5s;
     background-color: #eb6738;
-    border-color:#eb6738;
+    border-color: #eb6738;
 }
 
-.marquee-background{
+.marquee-background {
     transition: 0.5s;
-    width:100%;
+    width: 100%;
     position: relative;
     height: 100px;
     background-color: #fdeecc;
@@ -203,10 +219,11 @@ hr{
 
 @keyframes scroll {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
+
     to {
-      transform: translateX(calc(-100% - var(--gap)));
+        transform: translateX(calc(-100% - var(--gap)));
     }
 }
 
@@ -236,16 +253,16 @@ hr{
 } */
 
 .heading1 {
-    display:flex;
+    display: flex;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: -40px;
     font-size: 70%;
     font-family: 'Garnett Semibold';
-    
+
 }
 
-.h1{
+.h1 {
     transition: 0.5s;
     background-color: #fdeecc;
     color: black;
@@ -264,7 +281,7 @@ hr{
     user-select: none;
 }
 
-.info1{
+.info1 {
     transition: 0.5s;
     font-size: 85%;
     position: relative;
@@ -275,7 +292,7 @@ hr{
     font-family: 'NeueMontreal-Medium';
 }
 
-.info2{
+.info2 {
     transition: 0.5s;
     font-size: 85%;
     position: relative;
@@ -286,7 +303,7 @@ hr{
     font-family: 'NeueMontreal-Medium';
 }
 
-.info3{
+.info3 {
     transition: 0.5s;
     font-size: 85%;
     position: relative;
@@ -297,7 +314,7 @@ hr{
     font-family: 'NeueMontreal-Medium';
 }
 
-.info4{
+.info4 {
     transition: 0.5s;
     font-size: 85%;
     position: relative;
@@ -315,14 +332,14 @@ hr{
     font-family: 'Garnett Semibold';
 }
 
-.h2{
+.h2 {
     transition: 0.5s;
     background-color: #fdeecc;
     color: black;
     border-color: black;
 }
 
-.h3{
+.h3 {
     transition: 0.5s;
     background-color: #fdeecc;
     color: black;
@@ -345,34 +362,34 @@ hr{
     transition: 0.5s;
 }
 
-.urls{
+.urls {
     text-decoration: solid;
     color: black;
     transition: 0.25s;
 }
 
-.urls1{
+.urls1 {
     text-decoration: solid;
     color: black;
     transition: 0.25s;
 }
 
-.urls2{
+.urls2 {
     text-decoration: solid;
     color: black;
     transition: 0.25s;
 }
 
-.urls:hover{
-    color:#eb6738;
+.urls:hover {
+    color: #eb6738;
 }
 
-.urls1:hover{
-    color:#eb6738;
+.urls1:hover {
+    color: #eb6738;
     text-decoration: none;
 }
 
-.urls2:hover{
+.urls2:hover {
     color: #eb6738;
     text-decoration: none;
 }
@@ -382,13 +399,13 @@ hr{
     margin: auto;
     color: #000;
 }
-  
+
 #fontSlider {
     width: 100%;
     margin-top: 0px;
     background: #ced4da;
 }
-  
+
 #fontFamilyLabel {
     margin-top: 0px;
 }
@@ -407,7 +424,7 @@ hr{
     transition: opacity .2s;
     cursor: pointer;
 }
-  
+
 .slider:hover {
     opacity: 1;
     cursor: pointer;

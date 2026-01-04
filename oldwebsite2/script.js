@@ -109,27 +109,27 @@ function changeStyles() {
                 // Change style on hover
                 hoverr1.style.color = '#eb6738';
             });
-            
+
             hoverr1.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr1.style.color = 'black';
             });
-            
+
             hoverr2.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr2.style.color = '#eb6738';
             });
-            
+
             hoverr2.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr2.style.color = 'black';
             });
-            
+
             hoverr3.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr3.style.color = '#eb6738';
             });
-            
+
             hoverr3.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr3.style.color = 'black';
@@ -187,27 +187,27 @@ function changeStyles() {
                 // Change style on hover
                 hoverr1.style.color = '#94b1b1';
             });
-            
+
             hoverr1.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr1.style.color = '#4c4c4c';
             });
-            
+
             hoverr2.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr2.style.color = '#94b1b1';
             });
-            
+
             hoverr2.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr2.style.color = '#4c4c4c';
             });
-            
+
             hoverr3.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr3.style.color = '#94b1b1';
             });
-            
+
             hoverr3.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr3.style.color = '#4c4c4c';
@@ -265,27 +265,27 @@ function changeStyles() {
                 // Change style on hover
                 hoverr1.style.color = '#2c65f0';
             });
-            
+
             hoverr1.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr1.style.color = '#4c4c4c';
             });
-            
+
             hoverr2.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr2.style.color = '#2c65f0';
             });
-            
+
             hoverr2.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr2.style.color = 'black';
             });
-            
+
             hoverr3.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr3.style.color = '#2c65f0';
             });
-            
+
             hoverr3.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr3.style.color = 'black';
@@ -343,27 +343,27 @@ function changeStyles() {
                 // Change style on hover
                 hoverr1.style.color = '#77899d';
             });
-            
+
             hoverr1.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr1.style.color = '#4c4c4c';
             });
-            
+
             hoverr2.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr2.style.color = '#77899d';
             });
-            
+
             hoverr2.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr2.style.color = 'black';
             });
-            
+
             hoverr3.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr3.style.color = '#77899d';
             });
-            
+
             hoverr3.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr3.style.color = 'black';
@@ -421,27 +421,27 @@ function changeStyles() {
                 // Change style on hover
                 hoverr1.style.color = '#4a5841';
             });
-            
+
             hoverr1.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr1.style.color = '#7d4a33';
             });
-            
+
             hoverr2.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr2.style.color = '#4a5841';
             });
-            
+
             hoverr2.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr2.style.color = 'black';
             });
-            
+
             hoverr3.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr3.style.color = '#4a5841';
             });
-            
+
             hoverr3.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr3.style.color = 'black';
@@ -499,27 +499,27 @@ function changeStyles() {
                 // Change style on hover
                 hoverr1.style.color = '#77899d';
             });
-            
+
             hoverr1.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr1.style.color = '#212529';
             });
-            
+
             hoverr2.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr2.style.color = '#77899d';
             });
-            
+
             hoverr2.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr2.style.color = 'black';
             });
-            
+
             hoverr3.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr3.style.color = '#77899d';
             });
-            
+
             hoverr3.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr3.style.color = 'black';
@@ -577,27 +577,27 @@ function changeStyles() {
                 // Change style on hover
                 hoverr1.style.color = '#77899d';
             });
-            
+
             hoverr1.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr1.style.color = '#f8f9fa';
             });
-            
+
             hoverr2.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr2.style.color = '#77899d';
             });
-            
+
             hoverr2.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr2.style.color = 'black';
             });
-            
+
             hoverr3.addEventListener('mouseover', () => {
                 // Change style on hover
                 hoverr3.style.color = '#77899d';
             });
-            
+
             hoverr3.addEventListener('mouseout', () => {
                 // Change style on mouseout
                 hoverr3.style.color = 'black';
