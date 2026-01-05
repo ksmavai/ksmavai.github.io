@@ -1,0 +1,129 @@
+html {
+    scroll-behavior: smooth;
+}
+
+p::selection {
+    color: #377e22;
+    background: #f0fcee;
+}
+
+::selection {
+    color: #d22f1f;
+    background: #fbf2f1;
+}
+
+img::selection {
+    color: #cfd21f;
+    background: #fbfbf1;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url(fonts/GraphikExtralight.otf);
+}
+
+@font-face {
+    font-family: 'Graphik Italic';
+    src: url(fonts/GraphikLightItalic.otf);
+}
+
+body {
+    background-color: #eef5fd;
+    width: 35%;
+    top: 50%;
+    left: 67%;
+    margin: 0%;
+    position: absolute;
+    transform: translate(-67%, -50%);
+    font-size: 28px;
+    font-family: 'Graphik', Arial, Helvetica, sans-serif;
+    color: #2964c4;
+}
+
+div {
+    background-color: #f7fafe;
+    border-radius: 24px;
+    margin: 16px 0 36px;
+    padding: 10px 24px;
+    width: 327px;
+    min-width: 330px;
+    position: relative;
+    font-family: 'Graphik', Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 0 1px #0000000d, 0 1px 4px #0000001a;
+}
+
+img {
+    position: fixed;
+    left: -300px;
+    top: 40px;
+    border-radius: 5%;
+    box-shadow: 5px 5px #98bbe5;
+}
+
+a.urls:link {
+    color: #2964c4;
+    text-decoration: none;
+}
+
+a.urls:hover {
+    color: #2964c4;
+    text-decoration: none;
+    font-family: 'Graphik Italic', Arial, Helvetica, sans-serif;
+}
+
+a.urls:visited {
+    color: #2964c4;
+    text-decoration: none;
+}
+
+a.urls:active {
+    color: #d22f20;
+    text-decoration: none;
+}
+
+/* Hide the random element causing issues */
+#kr-alignment-app-content {
+    display: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        font-size: 24px;
+        overflow-x: hidden;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div {
+        width: 100%;
+        min-width: 0;
+        /* Override fixed width */
+        margin: 20px 0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    img {
+        position: relative;
+        /* Bring image back into flow */
+        width: 150px;
+        height: auto;
+        left: auto;
+        top: auto;
+        margin: 0 auto 20px auto;
+        display: block;
+        box-shadow: 2px 2px #98bbe5;
+    }
+}
