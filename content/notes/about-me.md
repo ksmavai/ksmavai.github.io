@@ -20,6 +20,6 @@ Hi there! I'm Kshitij, a 3rd year Software Engineering student at Carleton Unive
 
 ### More Info
 
-- Languages: Python, C, Java, Swift, JavaScript, TypeScript, SQL, HTML/CSS, Verilog, Assembly,Ruby
+- Languages: Python, C, Java, Swift, JavaScript, TypeScript, SQL, HTML/CSS, Verilog, Assembly, Ruby
 - Actual Languages: English, Hindi, Spanish
 - It's starting to sound like a resume so I'll stop here

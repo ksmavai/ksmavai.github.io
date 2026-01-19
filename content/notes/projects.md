@@ -19,7 +19,7 @@ category: "today"
 
 ### Academic Course Information System
 
-- An Python Discord bot hosted on Microsoft Azure serving 3,200+ users with PDF document watermarking, intelligent dual-LLM routing (DeepSeek/Perplexity) for conversational vs. real-time queries, and SQLite-backed note sharing with rate limiting and file integrity verification
+- A Python Discord bot hosted on Microsoft Azure serving 3,200+ users with PDF document watermarking, intelligent dual-LLM routing (DeepSeek/Perplexity) for conversational vs. real-time queries, and SQLite-backed note sharing with rate limiting and file integrity verification
 
 ### Automated Room Booking System
 

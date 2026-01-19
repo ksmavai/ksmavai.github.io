@@ -1,18 +1,30 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import ProjectCarousel from "./project-carousel";
+
+interface CarouselImage {
+    src: string;
+    alt: string;
+}
 
 interface Project {
     title: string;
     technical: string;
     simple: string;
+    images?: CarouselImage[];
 }
 
 const projects: Project[] = [
     {
         title: "Studysesh",
         technical: "An in-progress cross-platform mobile app built with React Native, Expo, TypeScript, and Reanimated, using Supabase for authentication, real-time chat, and course-based peer matching",
-        simple: "After my university cut their tutoring programs due to budgeting issues, I'm building this app to create a much more direct, peer-to-peer tutoring and social discovery platform with a better financial model for both students and tutors"
+        simple: "After my university cut their tutoring programs due to budgeting issues, I'm building this app to create a much more direct, peer-to-peer tutoring and social discovery platform with a better financial model for both students and tutors",
+        images: [
+            { src: "/art/p02.jpg", alt: "Studysesh screenshot 1" },
+            { src: "/art/p04.jpg", alt: "Studysesh screenshot 2" },
+            { src: "/art/p06.jpg", alt: "Studysesh screenshot 3" },
+        ]
     },
     {
         title: "Ottawa Transpo Widget",
@@ -108,6 +120,9 @@ function ProjectItem({ project }: ProjectItemProps) {
                     {isAnimating && <span className="animate-pulse">|</span>}
                 </li>
             </ul>
+            {project.images && project.images.length > 0 && (
+                <ProjectCarousel images={project.images} />
+            )}
         </div>
     );
 }
