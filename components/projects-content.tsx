@@ -103,7 +103,7 @@ function ProjectItem({ project }: ProjectItemProps) {
                 </button>
             </h3>
             <div className="flex">
-                <span className="mr-1.5 flex-shrink-0">-</span>
+                <span className="mr-1.5 flex-shrink-0">•</span>
                 <span className="text-sm">
                     {displayText}
                     {isAnimating && <span className="animate-pulse">|</span>}
