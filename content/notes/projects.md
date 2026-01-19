@@ -17,7 +17,7 @@ category: "today"
 
 - A privacy-first Chrome extension using TensorFlow.js and the MoveNet for real-time pose estimation tracking, applying CSS blur overlays when spinal alignment deviates from a user-calibrated baseline
 
-### Academic Course Discord Bot
+### Academic Course Information System
 
 - An Python Discord bot hosted on Microsoft Azure serving 3,200+ users with PDF document watermarking, intelligent dual-LLM routing (DeepSeek/Perplexity) for conversational vs. real-time queries, and SQLite-backed note sharing with rate limiting and file integrity verification
 

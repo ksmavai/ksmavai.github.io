@@ -102,13 +102,12 @@ function ProjectItem({ project }: ProjectItemProps) {
                     {isSimple ? "technical" : "translate"}
                 </button>
             </h3>
-            <div className="flex">
-                <span className="mr-1.5 flex-shrink-0">•</span>
-                <span className="text-sm">
+            <ul className="list-disc pl-5 mb-0">
+                <li className="text-sm pl-1">
                     {displayText}
                     {isAnimating && <span className="animate-pulse">|</span>}
-                </span>
-            </div>
+                </li>
+            </ul>
         </div>
     );
 }
