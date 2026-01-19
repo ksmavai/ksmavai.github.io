@@ -103,7 +103,7 @@ export default function Sidebar({
 
   useEffect(() => {
     if (pathname) {
-      const slug = pathname.split("/").pop();
+      const slug = pathname.split("/").filter(Boolean).pop();
       setSelectedNoteSlug(slug || null);
     }
   }, [pathname]);
