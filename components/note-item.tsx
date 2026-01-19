@@ -122,7 +122,7 @@ export const NoteItem = React.memo(function NoteItem({
         className={`h-full w-full px-4`}
       >
         <Link
-          href={`/notes/${item.slug || ""}`}
+          href={`/notes/${item.slug || ""}/`}
           prefetch={true}
           tabIndex={-1}
           className="block py-2 h-full w-full flex flex-col justify-center"

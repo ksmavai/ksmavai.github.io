@@ -46,8 +46,8 @@ export default function NoteHeader({
 
   return (
     <>
-      {isMobile && pathname !== "/notes" && (
-        <Link href="/notes">
+      {isMobile && pathname !== "/notes" && pathname !== "/notes/" && (
+        <Link href="/notes/">
           <button className="pt-2 flex items-center">
             <Icons.back />
             <span className="text-[#e2a727] text-base ml-1">Notes</span>
