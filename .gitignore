@@ -37,3 +37,6 @@ next-env.d.ts
 
 # internal documentation
 IMPLEMENTATION.md
+
+# legacy notes (HTML exports - not needed, content is in content/notes/*.md)
+/notes/
