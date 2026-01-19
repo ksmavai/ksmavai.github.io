@@ -1,12 +1,12 @@
 ---
-title: "some links"
+title: "Some Links"
 emoji: "📎"
 created_at: "2025-12-28T11:00:00Z"
 category: "pinned"
 ---
 
-- [email](mailto:kshitijmavai@gmail.com) - i'm awful at responding to emails
-- [github](https://github.com/ksmavai) - pretty empty, i usually work on projects locally
-- [linkedin](https://linkedin.com/in/ksmavai) - not much here either
-- [spotify](https://open.spotify.com/user/co2yz3ps4s3a96f0b6khero42?si=NxvRb_QRQvSUkkSkWR8sng) - music-listening enthusiast
-- [letterboxd](https://letterboxd.com/ksmavai) - film-watching enthusiast
+- [Email](mailto:kshitijmavai@gmail.com) - I'm fairly active
+- [Github](https://github.com/ksmavai) - Pretty empty, I usually work on projects locally
+- [LinkedIn](https://linkedin.com/in/ksmavai) - Plan to be more active on it!
+- [Spotify](https://open.spotify.com/user/co2yz3ps4s3a96f0b6khero42?si=NxvRb_QRQvSUkkSkWR8sng) - Music-listening enthusiast
+- [Letterboxd](https://letterboxd.com/ksmavai) - Film-watching enthusiast

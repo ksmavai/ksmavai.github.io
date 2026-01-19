@@ -1,45 +1,45 @@
 ---
-title: "on repeat"
+title: "On Repeat"
 emoji: "🎧"
 created_at: "2026-01-01T19:00:00Z"
 category: "yesterday"
 ---
 
-### fav artists
+### Fav Artists
 
-- fakemink
-- third hour
-- zayn
-- suki waterhouse
-- rahat fateh ali khan
-- jaiii
-- murtaza qizilbash
-- charli xcx
-- drake
-- pritam (apparently)
+- Fakemink
+- Third Hour
+- Zayn
+- Suki Waterhouse
+- Rahat Fateh Ali Khan
+- Jaiii
+- Murtaza Qizilbash
+- Charlie XCX
+- Drake
+- Pritam (apparently)
 
-### tunes
+### Tunes
 
-- nxworries - daydreaming
-- monsune - outta my mind
-- the pointer sisters - slow hand
-- dominic fike - why
-- george harrison - my sweet lord
-- shruti pathak - mar jawaan
-- zayn - i don't mind
-- anish kumar - nazia
-- third hour - tujhpe nazar
+- Nxworries - Daydreaming
+- Monsune - Outta My Mind
+- The Pointer Sisters - Slow Hand
+- Dominic Fike - Why
+- George Harrison - My Sweet Lord
+- Shruti Pathak - Mar Jawaan
+- Zayn - I Don't Mind
+- Anish Kumar - Nazia
+- Third Hour - Tujhpe Nazar
 
-### random assortments
+### Random Assortments
 
-- chaar diwaari
-- fairuz
-- avicii - true
-- shibu - tauba
-- fred again
-- pluko - falling
-- raf saperra - modern mirza
-- dhanji
-- amr diab
-- elliot smith
-- hiromi iwasaki - mirai
+- Chaar Diwaari
+- Fairuz
+- Avicii - True
+- Shibu - Tauba
+- Fred Again
+- Pluko - Falling
+- Raf Saperra - Modern Mirza
+- Dhanji
+- Amr Diab
+- Elliot Smith
+- Hiromi Iwasaki - Mirai
