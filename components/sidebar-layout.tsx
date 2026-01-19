@@ -21,7 +21,7 @@ export default function SidebarLayout({ children, notes }: SidebarLayoutProps) {
   useEffect(() => {
     // Only redirect if we are sure it is not mobile
     if (isMobileValue !== null && !isMobileValue && pathname === "/notes") {
-      router.push("/notes/about-me");
+      router.push("/notes/about-me/");
     }
   }, [isMobileValue, router, pathname]);
 
