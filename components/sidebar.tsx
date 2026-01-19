@@ -103,7 +103,7 @@ export default function Sidebar({
 
   useEffect(() => {
     if (pathname) {
-      const slug = pathname.split("/").filter(Boolean).pop();
+      const slug = pathname.split("/").pop();
       setSelectedNoteSlug(slug || null);
     }
   }, [pathname]);
@@ -191,7 +191,7 @@ export default function Sidebar({
         const nextNote = flattened[nextIndex];
 
         if (nextNote) {
-          router.push(`/notes/${nextNote.slug}/`);
+          router.push(`/notes/${nextNote.slug}`);
           // Wait for router navigation and React re-render
           setTimeout(() => {
             const selectedElement = document.querySelector(`[data-note-slug="${nextNote.slug}"]`);
@@ -226,7 +226,7 @@ export default function Sidebar({
       clearSearch();
 
       if (!isMobile) {
-        router.push(`/notes/${slug}/`);
+        router.push(`/notes/${slug}`);
       }
 
       toast({
@@ -251,7 +251,7 @@ export default function Sidebar({
   const goToHighlightedNote = useCallback(() => {
     if (localSearchResults && localSearchResults[highlightedIndex]) {
       const selectedNote = localSearchResults[highlightedIndex];
-      router.push(`/notes/${selectedNote.slug}/`);
+      router.push(`/notes/${selectedNote.slug}`);
       setTimeout(() => {
         const selectedElement = document.querySelector(`[data-note-slug="${selectedNote.slug}"]`);
         selectedElement?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -345,7 +345,7 @@ export default function Sidebar({
     (note: any) => {
       onNoteSelect(note);
       if (!isMobile) {
-        router.push(`/notes/${note.slug}/`);
+        router.push(`/notes/${note.slug}`);
       }
       clearSearch();
     },

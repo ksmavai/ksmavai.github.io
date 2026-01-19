@@ -20,16 +20,16 @@ export default function SidebarLayout({ children, notes }: SidebarLayoutProps) {
 
   useEffect(() => {
     // Only redirect if we are sure it is not mobile
-    if (isMobileValue !== null && !isMobileValue && (pathname === "/notes" || pathname === "/notes/")) {
-      router.push("/notes/about-me/");
+    if (isMobileValue !== null && !isMobileValue && pathname === "/notes") {
+      router.push("/notes/about-me");
     }
   }, [isMobileValue, router, pathname]);
 
   const handleNoteSelect = (note: any) => {
-    router.push(`/notes/${note.slug}/`);
+    router.push(`/notes/${note.slug}`);
   };
 
-  const showSidebar = !isMobile || pathname === "/notes" || pathname === "/notes/";
+  const showSidebar = !isMobile || pathname === "/notes";
 
   return (
     <div className="dark:text-white h-dvh flex">
