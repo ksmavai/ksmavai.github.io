@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useSwipeable } from "react-swipeable";
 import { useMobileDetect } from "@/components/mobile-detector";
 import { SwipeActions } from "./swipe-actions";
@@ -56,6 +57,7 @@ export const NoteItem = React.memo(function NoteItem({
   showDivider = false,
 }: NoteItemProps) {
   const isMobile = useMobileDetect();
+  const router = useRouter();
   const [isSwiping, setIsSwiping] = useState(false);
   const isSwipeOpen = openSwipeItemSlug === item.slug;
 
@@ -126,6 +128,10 @@ export const NoteItem = React.memo(function NoteItem({
           prefetch={true}
           tabIndex={-1}
           className="block py-2 h-full w-full flex flex-col justify-center"
+          onClick={(e) => {
+            e.preventDefault();
+            router.push(`/notes/${item.slug}`);
+          }}
         >
           <h2 className="text-sm font-bold px-2 break-words line-clamp-1">
             {item.emoji} {item.title}
