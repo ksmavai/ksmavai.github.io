@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useSwipeable } from "react-swipeable";
 import { useMobileDetect } from "@/components/mobile-detector";
 import { SwipeActions } from "./swipe-actions";
@@ -57,7 +56,6 @@ export const NoteItem = React.memo(function NoteItem({
   showDivider = false,
 }: NoteItemProps) {
   const isMobile = useMobileDetect();
-  const router = useRouter();
   const [isSwiping, setIsSwiping] = useState(false);
   const isSwipeOpen = openSwipeItemSlug === item.slug;
 
@@ -106,7 +104,26 @@ export const NoteItem = React.memo(function NoteItem({
   const isSelected = (!isMobile && isSearching && isHighlighted) ||
     (!isSearching && item.slug === selectedNoteSlug);
 
-  // NORMAL LAYOUT content
+  const noteContentInner = (
+    <>
+      <h2 className="text-sm font-bold px-2 break-words line-clamp-1">
+        {item.emoji} {item.title}
+      </h2>
+      <p
+        className={`text-xs pl-2 break-words line-clamp-1 ${isSelected
+          ? "text-muted-foreground dark:text-white/80"
+          : "text-muted-foreground"
+          }`}
+      >
+        <span className="text-black dark:text-white">
+          {displayDate.toLocaleDateString("en-US")}
+        </span>{" "}
+        {previewContent(item.content)}
+      </p>
+    </>
+  );
+
+  // NORMAL LAYOUT content - use button + onNoteSelect for reliable navigation
   const NoteContent = (
     <li
       tabIndex={0}
@@ -123,31 +140,13 @@ export const NoteItem = React.memo(function NoteItem({
         data-note-slug={item.slug}
         className={`h-full w-full px-4`}
       >
-        <Link
-          href={`/notes/${item.slug || ""}`}
-          prefetch={true}
+        <button
+          onClick={() => onNoteSelect(item)}
           tabIndex={-1}
-          className="block py-2 h-full w-full flex flex-col justify-center"
-          onClick={(e) => {
-            e.preventDefault();
-            router.push(`/notes/${item.slug}`);
-          }}
+          className="block py-2 h-full w-full flex flex-col justify-center text-left cursor-pointer"
         >
-          <h2 className="text-sm font-bold px-2 break-words line-clamp-1">
-            {item.emoji} {item.title}
-          </h2>
-          <p
-            className={`text-xs pl-2 break-words line-clamp-1 ${isSelected
-              ? "text-muted-foreground dark:text-white/80"
-              : "text-muted-foreground"
-              }`}
-          >
-            <span className="text-black dark:text-white">
-              {displayDate.toLocaleDateString("en-US")}
-            </span>{" "}
-            {previewContent(item.content)}
-          </p>
-        </Link>
+          {noteContentInner}
+        </button>
       </div>
     </li>
   );
