@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface GalleryProps {
     images: string[];
@@ -10,6 +10,29 @@ interface GalleryProps {
 
 export default function Gallery({ images }: GalleryProps) {
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
+    const [lightboxLoading, setLightboxLoading] = useState(false);
+
+    // Preload adjacent images when lightbox is open
+    useEffect(() => {
+        if (selectedIndex === null) return;
+
+        const preloadIndices = [
+            selectedIndex - 1,
+            selectedIndex,
+            selectedIndex + 1,
+        ].filter(i => i >= 0 && i < images.length);
+
+        preloadIndices.forEach(index => {
+            if (!loadedImages.has(index)) {
+                const img = new window.Image();
+                img.src = images[index];
+                img.onload = () => {
+                    setLoadedImages(prev => new Set(Array.from(prev).concat(index)));
+                };
+            }
+        });
+    }, [selectedIndex, images, loadedImages]);
 
     const handleKeyDown = useCallback((e: KeyboardEvent) => {
         if (selectedIndex === null) return;
@@ -40,6 +63,17 @@ export default function Gallery({ images }: GalleryProps) {
         };
     }, [selectedIndex]);
 
+    // Preload first 6 images on mount
+    useEffect(() => {
+        images.slice(0, 6).forEach((src, index) => {
+            const img = new window.Image();
+            img.src = src;
+            img.onload = () => {
+                setLoadedImages(prev => new Set(Array.from(prev).concat(index)));
+            };
+        });
+    }, [images]);
+
     if (!images || images.length === 0) {
         return (
             <div className="flex flex-col items-center justify-center p-12 text-muted-foreground">
@@ -56,16 +90,20 @@ export default function Gallery({ images }: GalleryProps) {
                     <div
                         key={index}
                         className="flex flex-col items-center group cursor-pointer"
-                        onClick={() => setSelectedIndex(index)}
+                        onClick={() => {
+                            setSelectedIndex(index);
+                            setLightboxLoading(!loadedImages.has(index));
+                        }}
                     >
-                        <div className="relative w-full aspect-[4/5] overflow-hidden">
-                            <img
+                        <div className="relative w-full aspect-[4/5] overflow-hidden bg-muted">
+                            <Image
                                 src={src}
                                 alt={`Art piece ${index + 1}`}
-                                className="w-full h-full object-cover transition-transform duration-300 md:hover:scale-105"
-                                loading={index < 4 ? "eager" : "lazy"}
-                                decoding="async"
-                                fetchPriority={index < 4 ? "high" : "auto"}
+                                fill
+                                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
+                                className="object-cover transition-transform duration-300 md:hover:scale-105"
+                                priority={index < 6}
+                                quality={75}
                             />
                         </div>
                     </div>
@@ -89,6 +127,7 @@ export default function Gallery({ images }: GalleryProps) {
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
+                                setLightboxLoading(!loadedImages.has(selectedIndex - 1));
                                 setSelectedIndex(selectedIndex - 1);
                             }}
                             className="absolute left-2 md:left-8 p-3 rounded-full bg-background/10 backdrop-blur-md border border-border/20 text-foreground hover:bg-background/20 transition-all z-50"
@@ -107,10 +146,20 @@ export default function Gallery({ images }: GalleryProps) {
                             className="relative max-w-full max-h-full shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <img
+                            {lightboxLoading && (
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="w-8 h-8 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin" />
+                                </div>
+                            )}
+                            <Image
                                 src={images[selectedIndex]}
                                 alt={`Art piece ${selectedIndex + 1}`}
-                                className="max-w-[90vw] max-h-[85vh] object-contain"
+                                width={1200}
+                                height={1500}
+                                className="max-w-[90vw] max-h-[85vh] w-auto h-auto object-contain"
+                                priority
+                                quality={90}
+                                onLoad={() => setLightboxLoading(false)}
                             />
                         </div>
                     </div>
@@ -120,6 +169,7 @@ export default function Gallery({ images }: GalleryProps) {
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
+                                setLightboxLoading(!loadedImages.has(selectedIndex + 1));
                                 setSelectedIndex(selectedIndex + 1);
                             }}
                             className="absolute right-2 md:right-8 p-3 rounded-full bg-background/10 backdrop-blur-md border border-border/20 text-foreground hover:bg-background/20 transition-all z-50"
@@ -133,3 +183,4 @@ export default function Gallery({ images }: GalleryProps) {
         </>
     );
 }
+

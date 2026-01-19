@@ -165,7 +165,7 @@ export default function SkillsPhysics({ categories, subtitle }: SkillsPhysicsPro
             Matter.Runner.run(runner, engine);
 
             // Phase timers
-            const timer1 = setTimeout(() => setPhase("colorReveal"), 3000);
+            const timer1 = setTimeout(() => setPhase("colorReveal"), 1500);
             const timer2 = setTimeout(() => {
                 setPhase("falling");
                 // ENABLE GRAVITY NOW
@@ -173,7 +173,7 @@ export default function SkillsPhysics({ categories, subtitle }: SkillsPhysicsPro
                     console.log("Enabling gravity!");
                     engineRef.current.gravity.y = 1;
                 }
-            }, 6000);
+            }, 3000);
 
             // Position updates with boundary clamping
             let animationId: number;
