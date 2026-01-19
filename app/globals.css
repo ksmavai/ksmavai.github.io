@@ -1,8 +1,8 @@
+@import "./notes/styles/github-markdown.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "./notes/styles/github-markdown.css";
 
 /* Enable SF Pro font smoothing */
 @layer base {

@@ -9,13 +9,13 @@ i'm kshitij, a 3rd year software engineering student at carleton university
 
 ### currently
 
-- seeking 2026 summer swe internships
+- seeking 2026 summer swe/data internships
 - founded and leading my university's largest [digital engineering community](https://discord.gg/WyvxPAqZ95) (3,200+ members)
 - continuing to build studysesh
 
 ### previously
 
-- interned at the [house of commons](https://www.ourcommons.ca/en) (summer 2025) as a software & design intern
+- interned at the [house of commons](https://www.ourcommons.ca/en) (summer 2025) as a data engineering intern
 - led initiatives within vp and exec roles in some amazing Carleton clubs like [CUSEC](https://carletoncusec.com/team/), [CSES](https://www.mycses.ca/), [NAAIS](https://www.cusaclubs.ca/club/north-american-association-of-indian-students-carleton-university/), and many many more
 
 ### more info

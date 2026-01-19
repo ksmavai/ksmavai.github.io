@@ -24,14 +24,17 @@ export async function generateStaticParams() {
 }
 
 // Use dynamic rendering for non-public notes
-export const dynamicParams = true;
+export const dynamicParams = false;
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
 export async function generateMetadata({
   params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const slug = params.slug.replace(/^notes\//, '');
+}: Props): Promise<Metadata> {
+  const { slug: rawSlug } = await params;
+  const slug = rawSlug.replace(/^notes\//, '');
   const note = await getNote(slug);
 
   if (!note) {
@@ -48,10 +51,9 @@ export async function generateMetadata({
 
 export default async function NotePage({
   params,
-}: {
-  params: { slug: string };
-}) {
-  const slug = params.slug.replace(/^notes\//, '');
+}: Props) {
+  const { slug: rawSlug } = await params;
+  const slug = rawSlug.replace(/^notes\//, '');
   const note = await getNote(slug);
 
   if (!note) {

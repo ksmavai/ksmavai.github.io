@@ -1,6 +1,9 @@
 import { getAllNotes } from '@/lib/notes'
 import { MetadataRoute } from 'next'
 
+export const dynamic = "force-static";
+
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const notes = getAllNotes();
 

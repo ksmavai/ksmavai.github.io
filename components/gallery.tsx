@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 
 interface GalleryProps {
     images: string[];
@@ -96,14 +96,14 @@ export default function Gallery({ images }: GalleryProps) {
                         }}
                     >
                         <div className="relative w-full aspect-[4/5] overflow-hidden bg-muted">
-                            <Image
+                            <ExportedImage
                                 src={src}
                                 alt={`Art piece ${index + 1}`}
                                 fill
                                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
                                 className="object-cover transition-transform duration-300 md:hover:scale-105"
                                 priority={index < 6}
-                                quality={75}
+                                draggable={false}
                             />
                         </div>
                     </div>
@@ -151,14 +151,14 @@ export default function Gallery({ images }: GalleryProps) {
                                     <div className="w-8 h-8 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin" />
                                 </div>
                             )}
-                            <Image
+                            <ExportedImage
                                 src={images[selectedIndex]}
                                 alt={`Art piece ${selectedIndex + 1}`}
                                 width={1200}
                                 height={1500}
                                 className="max-w-[90vw] max-h-[85vh] w-auto h-auto object-contain"
                                 priority
-                                quality={90}
+                                draggable={false}
                                 onLoad={() => setLightboxLoading(false)}
                             />
                         </div>
