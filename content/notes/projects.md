@@ -7,7 +7,7 @@ category: "today"
 
 ### Studysesh
 
-- A cross-platform mobile app built with React Native, Expo, TypeScript, and Reanimated, using Supabase for authentication, real-time chat, and course-based peer matching
+- An in-progress cross-platform mobile app built with React Native, Expo, TypeScript, and Reanimated, using Supabase for authentication, real-time chat, and course-based peer matching
 
 ### Ottawa Transpo Widget
 
@@ -25,6 +25,6 @@ category: "today"
 
 - A dockerized Spring Boot microservice using Selenium for headless browser automation with a CI/CD pipeline for nightly cron-scheduled execution, implementing intelligent multi-day lookahead scheduling and dynamic DOM traversal for automated room bookings.
 
-### AI Assistant Mobile App [Archived]
+### AI Assistant Web-App [Archived]
 
-- A locally-hosted RAG-based AI assistant with vector-embedded semantic search, enabling users to augment LLM responses with private document knowledge through a three-tier architecture: a React frontend, Python REST backend, and a ChromaDB-powered docstore. Deprecated and pivoted to Discord bot project with similar AI features.
+- A locally-hosted RAG-based AI advice assistant with vector-embedded semantic search, enabling users to augment LLM responses with private document knowledge through a three-tier architecture: a React frontend, Python REST backend, and a ChromaDB-powered docstore. Deprecated and pivoted to Discord bot project with similar AI features.

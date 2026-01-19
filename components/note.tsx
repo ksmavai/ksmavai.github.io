@@ -6,6 +6,7 @@ import NoteContent from "./note-content";
 import Gallery from "./gallery";
 import SkillsPhysics from "./skills-physics";
 import MarqueeContent from "./marquee-content";
+import ProjectsContent from "./projects-content";
 import { useState } from "react";
 import { toast } from "./ui/use-toast";
 
@@ -34,6 +35,9 @@ export default function Note({ note: initialNote }: { note: any }) {
     }
     if (note.slug === 'on-repeat') {
       return <MarqueeContent content={note.content} />;
+    }
+    if (note.slug === 'projects') {
+      return <ProjectsContent />;
     }
     return <NoteContent note={note} saveNote={saveNote} canEdit={canEdit} />;
   };
