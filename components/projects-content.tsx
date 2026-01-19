@@ -95,19 +95,20 @@ function ProjectItem({ project }: ProjectItemProps) {
                     onClick={handleToggle}
                     disabled={isAnimating}
                     className={`text-xs px-2 py-0.5 rounded-full border transition-all duration-200 ${isAnimating
-                            ? "opacity-50 cursor-not-allowed border-muted-foreground/30 text-muted-foreground"
-                            : "border-muted-foreground/50 hover:border-foreground hover:bg-muted cursor-pointer text-muted-foreground hover:text-foreground"
+                        ? "opacity-50 cursor-not-allowed border-muted-foreground/30 text-muted-foreground"
+                        : "border-muted-foreground/50 hover:border-foreground hover:bg-muted cursor-pointer text-muted-foreground hover:text-foreground"
                         }`}
                 >
                     {isSimple ? "technical" : "translate"}
                 </button>
             </h3>
-            <ul className="list-disc list-inside">
-                <li className="text-sm">
+            <div className="flex">
+                <span className="mr-1.5 flex-shrink-0">-</span>
+                <span className="text-sm">
                     {displayText}
                     {isAnimating && <span className="animate-pulse">|</span>}
-                </li>
-            </ul>
+                </span>
+            </div>
         </div>
     );
 }
