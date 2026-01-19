@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 interface Project {
     title: string;
@@ -88,35 +88,38 @@ function ProjectItem({ project }: ProjectItemProps) {
     };
 
     return (
-        <div className="mb-6">
-            <div className="flex items-center justify-between gap-3 mb-2">
-                <h3 className="text-lg font-semibold">### {project.title}</h3>
+        <div className="mb-4">
+            <h3 className="text-base font-semibold mb-1 flex items-center gap-2">
+                {project.title}
                 <button
                     onClick={handleToggle}
                     disabled={isAnimating}
-                    className={`text-xs px-3 py-1 rounded-full border transition-all duration-200 whitespace-nowrap ${isAnimating
+                    className={`text-xs px-2 py-0.5 rounded-full border transition-all duration-200 ${isAnimating
                             ? "opacity-50 cursor-not-allowed border-muted-foreground/30 text-muted-foreground"
                             : "border-muted-foreground/50 hover:border-foreground hover:bg-muted cursor-pointer text-muted-foreground hover:text-foreground"
                         }`}
                 >
-                    {isSimple ? "show technical" : "translate"}
+                    {isSimple ? "technical" : "translate"}
                 </button>
-            </div>
-            <p className="text-sm text-muted-foreground pl-4">
-                <span className="mr-2">•</span>
-                {displayText}
-                {isAnimating && <span className="animate-pulse">|</span>}
-            </p>
+            </h3>
+            <ul className="list-disc list-inside">
+                <li className="text-sm">
+                    {displayText}
+                    {isAnimating && <span className="animate-pulse">|</span>}
+                </li>
+            </ul>
         </div>
     );
 }
 
 export default function ProjectsContent() {
     return (
-        <div className="py-2 px-4">
-            {projects.map((project, index) => (
-                <ProjectItem key={index} project={project} />
-            ))}
+        <div className="px-2 text-base md:text-sm">
+            <div className="markdown-body">
+                {projects.map((project, index) => (
+                    <ProjectItem key={index} project={project} />
+                ))}
+            </div>
         </div>
     );
 }
