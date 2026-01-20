@@ -103,15 +103,15 @@ function ProjectItem({ project }: ProjectItemProps) {
     };
 
     return (
-        <div className="mb-4">
-            <h3 className="text-base font-semibold mb-1 flex flex-wrap md:flex-nowrap items-center gap-2 max-w-full pr-2 min-w-0">
-                <span className="break-words min-w-0">
+        <div className="mb-4 max-w-full overflow-x-hidden">
+            <h3 className="text-base font-semibold mb-1 flex flex-wrap items-center gap-2 max-w-full pr-4">
+                <span className="min-w-0 flex-1" style={{ overflowWrap: 'anywhere' }}>
                     {project.title}
                 </span>
                 <button
                     onClick={handleToggle}
                     disabled={isAnimating}
-                    className={`text-xs px-2 py-0.5 rounded-full border transition-all duration-200 ${isAnimating
+                    className={`flex-shrink-0 text-xs px-2 py-0.5 rounded-full border transition-all duration-200 ${isAnimating
                         ? "opacity-50 cursor-not-allowed border-muted-foreground/30 text-muted-foreground"
                         : "border-muted-foreground/50 hover:border-foreground hover:bg-muted cursor-pointer text-muted-foreground hover:text-foreground"
                         }`}
@@ -119,8 +119,8 @@ function ProjectItem({ project }: ProjectItemProps) {
                     {isSimple ? "technical" : "translate"}
                 </button>
             </h3>
-            <ul className="list-disc pl-5 mb-0">
-                <li className="text-sm pl-1">
+            <ul className="list-disc pl-5 mb-0 max-w-full">
+                <li className="text-sm pl-1" style={{ overflowWrap: 'anywhere' }}>
                     {displayText}
                     {isAnimating && <span className="animate-pulse">|</span>}
                 </li>
