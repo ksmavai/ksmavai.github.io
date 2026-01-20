@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useMobileDetect } from "./mobile-detector";
 
 interface CarouselImage {
     src: string;
@@ -13,6 +14,7 @@ interface ProjectCarouselProps {
 
 export default function ProjectCarousel({ images }: ProjectCarouselProps) {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+    const isMobile = useMobileDetect();
 
     const handleImageClick = (index: number) => {
         setExpandedIndex(expandedIndex === index ? null : index);
@@ -29,8 +31,8 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                 <div
                     className="flex gap-4 items-center overflow-x-auto pb-8 -mb-8 snap-x snap-mandatory hide-scrollbar"
                     style={{
-                        paddingLeft: '24px',
-                        paddingRight: '16px',
+                        paddingLeft: isMobile ? '40px' : '8px',
+                        paddingRight: isMobile ? '16px' : '8px',
                     }}
                 >
                     {images.map((image, index) => {
@@ -39,7 +41,7 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                             <div
                                 key={index}
                                 onClick={() => handleImageClick(index)}
-                                className="flex-none cursor-pointer transform-gpu snap-start"
+                                className="flex-none cursor-pointer transform-gpu snap-center"
                                 style={{
                                     width: isExpanded ? '280px' : '160px',
                                     transition: 'width 0.6s cubic-bezier(0.34, 1.6, 0.64, 1)',
