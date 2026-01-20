@@ -21,14 +21,11 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
     if (images.length === 0) return null;
 
     return (
-        // Mobile Breakout & Desktop Layout
         <div className="mt-8 mb-8 relative z-0">
             <div
                 className={`
                     relative
-                    /* Mobile: Break out of parent padding to full viewport width using the 'center-breakout' technique */
                     left-[50%] -translate-x-[50%] w-[100vw]
-                    /* Desktop: Reset breakout and use the -8px negative margin (standard clipping) */
                     md:left-auto md:translate-x-0 md:w-auto md:-ml-2 md:-mr-2
                     overflow-hidden
                 `}
@@ -42,8 +39,7 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                         hide-scrollbar
                     "
                     style={{
-                        // Padding logic
-                        paddingLeft: '16px', // Align with text (px-2 = 8px)
+                        paddingLeft: '16px',
                         paddingRight: '16px',
                     }}
                 >
@@ -66,7 +62,6 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                                     className="w-full h-auto block select-none shadow-sm"
                                     style={{
                                         borderRadius: '16px',
-                                        // Slight background to distinguish cards
                                         backgroundColor: 'rgba(0,0,0,0.02)'
                                     }}
                                     draggable={false}
@@ -74,7 +69,6 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                             </div>
                         );
                     })}
-                    {/* Spacer to ensure right edge scrolling allows full view of last item */}
                     <div className="flex-none w-2" />
                 </div>
             </div>
@@ -82,11 +76,11 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
             {/* Force hide scrollbars */}
             <style jsx global>{`
                 .hide-scrollbar {
-                    -ms-overflow-style: none;  /* IE and Edge */
-                    scrollbar-width: none;  /* Firefox */
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
                 }
                 .hide-scrollbar::-webkit-scrollbar {
-                    display: none; /* Chrome, Safari and Opera */
+                    display: none;
                 }
             `}</style>
         </div>
