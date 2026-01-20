@@ -106,8 +106,8 @@ function ProjectItem({ project }: ProjectItemProps) {
 
     return (
         <div className="mb-4" style={isMobile ? { maxWidth: 'calc(100vw - 48px)' } : undefined}>
-            <h3 className="text-base font-semibold mb-1 flex flex-wrap items-center gap-2" style={{ maxWidth: '100%' }}>
-                <span className="min-w-0" style={{ overflowWrap: 'anywhere', flex: '1 1 auto' }}>
+            <h3 className="text-base font-semibold mb-1 flex flex-wrap md:flex-nowrap items-center gap-2">
+                <span className="min-w-0" style={isMobile ? { overflowWrap: 'anywhere', flex: '1 1 auto' } : undefined}>
                     {project.title}
                 </span>
                 <button
@@ -121,8 +121,8 @@ function ProjectItem({ project }: ProjectItemProps) {
                     {isSimple ? "technical" : "translate"}
                 </button>
             </h3>
-            <ul className="list-disc pl-5 mb-0 max-w-full">
-                <li className="text-sm pl-1" style={{ overflowWrap: 'anywhere' }}>
+            <ul className="list-disc pl-5 mb-0" style={isMobile ? { maxWidth: '100%' } : { maxWidth: '540px' }}>
+                <li className="text-sm pl-1" style={isMobile ? { overflowWrap: 'anywhere' } : undefined}>
                     {displayText}
                     {isAnimating && <span className="animate-pulse">|</span>}
                 </li>
