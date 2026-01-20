@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import ProjectCarousel from "./project-carousel";
+import { useMobileDetect } from "./mobile-detector";
 
 interface CarouselImage {
     src: string;
@@ -61,6 +62,7 @@ interface ProjectItemProps {
 }
 
 function ProjectItem({ project }: ProjectItemProps) {
+    const isMobile = useMobileDetect();
     const [isSimple, setIsSimple] = useState(false);
     const [displayText, setDisplayText] = useState(project.technical);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -103,7 +105,7 @@ function ProjectItem({ project }: ProjectItemProps) {
     };
 
     return (
-        <div className="mb-4" style={{ maxWidth: 'calc(100vw - 32px)' }}>
+        <div className="mb-4" style={isMobile ? { maxWidth: 'calc(100vw - 48px)' } : undefined}>
             <h3 className="text-base font-semibold mb-1 flex flex-wrap items-center gap-2" style={{ maxWidth: '100%' }}>
                 <span className="min-w-0" style={{ overflowWrap: 'anywhere', flex: '1 1 auto' }}>
                     {project.title}
@@ -133,8 +135,9 @@ function ProjectItem({ project }: ProjectItemProps) {
 }
 
 export default function ProjectsContent() {
+    const isMobile = useMobileDetect();
     return (
-        <div className="px-4 text-base md:text-sm" style={{ maxWidth: '100vw', boxSizing: 'border-box' }}>
+        <div className="px-4 text-base md:text-sm" style={isMobile ? { maxWidth: '100vw', boxSizing: 'border-box' } : undefined}>
             <div className="markdown-body">
                 {projects.map((project, index) => (
                     <ProjectItem key={index} project={project} />
