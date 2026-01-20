@@ -28,53 +28,31 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
         <div className="mt-3 mb-2">
             {/* Horizontal scroll container */}
             <div
-                className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide"
+                className="flex gap-3 overflow-x-auto pb-2"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {images.map((image, index) => (
-                    <div
-                        key={index}
-                        onClick={() => handleImageClick(index)}
-                        className={`flex-shrink-0 cursor-pointer transition-all duration-500 ease-in-out overflow-hidden rounded-lg ${expandedIndex === index
-                            ? "w-full"
-                            : "w-48 md:w-56"
-                            }`}
-                    >
+                {images.map((image, index) => {
+                    const isExpanded = expandedIndex === index;
+
+                    return (
                         <div
-                            className={`relative transition-all duration-500 ease-in-out ${expandedIndex === index
-                                ? "aspect-video w-full"
-                                : "aspect-[16/10] w-full"
+                            key={index}
+                            onClick={() => handleImageClick(index)}
+                            className={`flex-shrink-0 cursor-pointer transition-all duration-300 ease-in-out overflow-hidden rounded-xl ${isExpanded ? "w-80 md:w-96" : "w-48 md:w-56"
                                 }`}
                         >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src={image.src}
-                                alt={image.alt}
-                                className="w-full h-full object-cover rounded-lg"
-                            />
+                            {/* Force landscape aspect ratio */}
+                            <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-
-            {/* Expanded view below carousel */}
-            <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedIndex !== null ? "mt-3 max-h-[600px] opacity-100" : "max-h-0 opacity-0"
-                    }`}
-            >
-                {expandedIndex !== null && (
-                    <div
-                        className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer bg-muted"
-                        onClick={() => setExpandedIndex(null)}
-                    >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                            src={images[expandedIndex].src}
-                            alt={images[expandedIndex].alt}
-                            className="w-full h-full object-contain rounded-lg"
-                        />
-                    </div>
-                )}
+                    );
+                })}
             </div>
         </div>
     );
