@@ -170,11 +170,13 @@ export default function NoteContent({
   const renderLink = useCallback((props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
     const href = props.href || "";
     const isExternal = /^https?:\/\//i.test(href);
+    const isPdf = href.toLowerCase().endsWith('.pdf');
+    const openInNewTab = isExternal || isPdf;
     return (
       <a
         {...props}
-        target={isExternal ? "_blank" : undefined}
-        rel={isExternal ? "noopener noreferrer" : undefined}
+        target={openInNewTab ? "_blank" : undefined}
+        rel={openInNewTab ? "noopener noreferrer" : undefined}
         onClick={(e) => e.stopPropagation()}
       >
         {props.children}
