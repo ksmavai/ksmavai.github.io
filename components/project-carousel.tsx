@@ -39,14 +39,12 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                         overflow-x-auto 
                         pb-8 -mb-8
                         snap-x snap-mandatory 
+                        hide-scrollbar
                     "
                     style={{
-                        scrollbarWidth: 'none',
-                        msOverflowStyle: 'none',
-                        WebkitOverflowScrolling: 'touch',
                         // Padding logic
-                        paddingLeft: '8px', // Align with text (px-2 = 8px)
-                        paddingRight: '8px',
+                        paddingLeft: '16px', // Align with text (px-2 = 8px)
+                        paddingRight: '16px',
                     }}
                 >
                     {images.map((image, index) => {
@@ -80,6 +78,17 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                     <div className="flex-none w-2" />
                 </div>
             </div>
+
+            {/* Force hide scrollbars */}
+            <style jsx global>{`
+                .hide-scrollbar {
+                    -ms-overflow-style: none;  /* IE and Edge */
+                    scrollbar-width: none;  /* Firefox */
+                }
+                .hide-scrollbar::-webkit-scrollbar {
+                    display: none; /* Chrome, Safari and Opera */
+                }
+            `}</style>
         </div>
     );
 }

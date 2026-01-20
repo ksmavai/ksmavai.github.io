@@ -104,8 +104,10 @@ function ProjectItem({ project }: ProjectItemProps) {
 
     return (
         <div className="mb-4">
-            <h3 className="text-base font-semibold mb-1 flex flex-wrap md:flex-nowrap items-center gap-2 max-w-full pr-2">
-                {project.title}
+            <h3 className="text-base font-semibold mb-1 flex flex-wrap md:flex-nowrap items-center gap-2 max-w-full pr-2 min-w-0">
+                <span className="break-words min-w-0">
+                    {project.title}
+                </span>
                 <button
                     onClick={handleToggle}
                     disabled={isAnimating}
