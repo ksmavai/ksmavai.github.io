@@ -8,6 +8,7 @@ interface CarouselMedia {
     src: string;
     alt: string;
     type?: 'image' | 'video'; // defaults to 'image' if not specified
+    aspectRatio?: 'portrait' | 'landscape'; // Override auto-detection
 }
 
 interface ProjectCarouselProps {
@@ -57,8 +58,11 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                         const isExpanded = expandedIndex === index;
                         const isVideo = media.type === 'video' || isVideoFile(media.src);
 
-                        // Determine size based on aspect ratio (default to portrait if not yet known)
-                        const isLandscape = aspectRatios[index] === 'landscape';
+                        // Determine size based on aspect ratio
+                        // Use override if provided, otherwise use auto-detected, default to portrait
+                        const isLandscape = media.aspectRatio
+                            ? media.aspectRatio === 'landscape'
+                            : aspectRatios[index] === 'landscape';
                         const sizes = isLandscape ? LANDSCAPE_SIZES : PORTRAIT_SIZES;
                         const width = isExpanded ? sizes.expanded : sizes.collapsed;
 

@@ -11,6 +11,7 @@ interface CarouselMedia {
     src: string;
     alt: string;
     type?: 'image' | 'video'; // Optional - auto-detected from extension if not specified
+    aspectRatio?: 'portrait' | 'landscape'; // Optional - override auto-detection
 }
 
 interface Project {
@@ -51,7 +52,7 @@ const projects: Project[] = [
         technical: "A privacy-first Chrome extension using TensorFlow.js and the MoveNet for real-time pose estimation tracking, applying CSS blur overlays when spinal alignment deviates from a user-calibrated baseline",
         simple: "A looot of CS and Software Engineering friends of mine are always hunched over their laptops, so I made a fun extension that basically forces one to fix their posture",
         images: [
-            { src: "/projects/slouch/screenshot.png", alt: "Slouch screenshot" },
+            { src: "/projects/slouch/screenshot.png", alt: "Slouch screenshot", aspectRatio: 'landscape' },
             { src: "/projects/slouch/vid1.mp4", alt: "Slouch demo" },
         ]
     },
