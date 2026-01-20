@@ -103,9 +103,9 @@ function ProjectItem({ project }: ProjectItemProps) {
     };
 
     return (
-        <div className="mb-4 max-w-full overflow-x-hidden">
-            <h3 className="text-base font-semibold mb-1 flex flex-wrap items-center gap-2 max-w-full pr-4">
-                <span className="min-w-0 flex-1" style={{ overflowWrap: 'anywhere' }}>
+        <div className="mb-4" style={{ maxWidth: 'calc(100vw - 32px)' }}>
+            <h3 className="text-base font-semibold mb-1 flex flex-wrap items-center gap-2" style={{ maxWidth: '100%' }}>
+                <span className="min-w-0" style={{ overflowWrap: 'anywhere', flex: '1 1 auto' }}>
                     {project.title}
                 </span>
                 <button
@@ -134,7 +134,7 @@ function ProjectItem({ project }: ProjectItemProps) {
 
 export default function ProjectsContent() {
     return (
-        <div className="pl-2 pr-16 text-base md:text-sm break-words">
+        <div className="px-4 text-base md:text-sm" style={{ maxWidth: '100vw', boxSizing: 'border-box' }}>
             <div className="markdown-body">
                 {projects.map((project, index) => (
                     <ProjectItem key={index} project={project} />
