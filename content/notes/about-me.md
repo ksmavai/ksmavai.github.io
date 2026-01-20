@@ -11,7 +11,7 @@ Hi there! I'm Kshitij, a 3rd year Software Engineering student at Carleton Unive
 
 - Seeking 2026 Summer SWE/Data Internships
 - Founded and leading my university's largest [digital engineering community](https://discord.gg/WyvxPAqZ95) (3,200+ members)
-- Continuing to build studysesh, a React Native + Expo social app for classmate discovery and tutoring
+- Continuing to build [studysesh](/notes/projects), a React Native + Expo social app for classmate discovery and tutoring
 
 ### Previously
 
@@ -22,4 +22,4 @@ Hi there! I'm Kshitij, a 3rd year Software Engineering student at Carleton Unive
 
 - Languages: Python, C, Java, Swift, JavaScript, TypeScript, SQL, HTML/CSS, Verilog, Assembly, Ruby
 - Actual Languages: English, Hindi, Spanish
-- It's starting to sound like a resume so I'll stop here
+- It's starting to sound like a <a href="/resume/resume.pdf" target="_blank">resume</a> so I'll stop here
