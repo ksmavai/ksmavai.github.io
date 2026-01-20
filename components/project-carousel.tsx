@@ -22,22 +22,12 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
 
     return (
         <div className="mt-8 mb-8 relative z-0">
+            {/* Flattened className to avoid parsing errors */}
             <div
-                className={`
-                    relative
-                    left-[50%] -translate-x-[50%] w-[100vw]
-                    md:left-auto md:translate-x-0 md:w-auto md:-ml-2 md:-mr-2
-                    overflow-hidden
-                `}
+                className="relative left-[50%] -translate-x-[50%] w-[100vw] md:left-auto md:translate-x-0 md:w-auto md:-ml-2 md:-mr-2 overflow-hidden"
             >
                 <div
-                    className="
-                        flex gap-4 items-center
-                        overflow-x-auto 
-                        pb-8 -mb-8
-                        snap-x snap-mandatory 
-                        hide-scrollbar
-                    "
+                    className="flex gap-4 items-center overflow-x-auto pb-8 -mb-8 snap-x snap-mandatory hide-scrollbar"
                     style={{
                         paddingLeft: '16px',
                         paddingRight: '16px',
