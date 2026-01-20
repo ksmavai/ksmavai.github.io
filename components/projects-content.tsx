@@ -53,7 +53,7 @@ const projects: Project[] = [
         simple: "A looot of CS and Software Engineering friends of mine are always hunched over their laptops, so I made a fun extension that basically forces one to fix their posture",
         images: [
             { src: "/projects/slouch/screenshot.png", alt: "Slouch screenshot", aspectRatio: 'landscape' },
-            { src: "/projects/slouch/vid1.mp4", alt: "Slouch demo" },
+            { src: "/projects/slouch/vid1.mp4", alt: "Slouch demo", aspectRatio: 'landscape' },
         ]
     },
     {
@@ -61,9 +61,9 @@ const projects: Project[] = [
         technical: "A Python Discord bot hosted on Microsoft Azure serving 3,200+ users with PDF document watermarking, intelligent dual-LLM routing (DeepSeek/Perplexity) for conversational vs. real-time queries, and SQLite-backed note sharing with rate limiting and file integrity verification",
         simple: "I run a Discord server I started in first year which has now grown to 3,200+ engineering students. I wanted a better way for them to learn about courses and share notes with secure watermarking (so notes don't end up on sites like StudoCu...), so I built this bot with some AI features for fun",
         images: [
-            { src: "/projects/academic-course-info/vid1.mp4", alt: "Academic bot demo 1" },
-            { src: "/projects/academic-course-info/vid2.mp4", alt: "Academic bot demo 2" },
-            { src: "/projects/academic-course-info/vid3.mp4", alt: "Academic bot demo 3" },
+            { src: "/projects/academic-course-info/vid1.mp4", alt: "Academic bot demo 1", aspectRatio: 'landscape' },
+            { src: "/projects/academic-course-info/vid2.mp4", alt: "Academic bot demo 2", aspectRatio: 'landscape' },
+            { src: "/projects/academic-course-info/vid3.mp4", alt: "Academic bot demo 3", aspectRatio: 'landscape' },
         ]
     },
     {
@@ -71,7 +71,7 @@ const projects: Project[] = [
         technical: "A dockerized Spring Boot microservice using Selenium for headless browser automation with a CI/CD pipeline for nightly cron-scheduled execution, implementing intelligent multi-day lookahead scheduling and dynamic DOM traversal for automated room bookings.",
         simple: "Library rooms at my university get booked super fast, so I decided to automate the booking process on a nightly basis instead of doing it manually",
         images: [
-            { src: "/projects/room-booking/vid1.mp4", alt: "Room booking demo" },
+            { src: "/projects/room-booking/vid1.mp4", alt: "Room booking demo", aspectRatio: 'landscape' },
         ]
     },
     {
