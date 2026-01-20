@@ -43,7 +43,7 @@ export default function Note({ note: initialNote }: { note: any }) {
   };
 
   return (
-    <div className="h-full overflow-y-auto bg-background">
+    <div className="h-full overflow-y-auto overflow-x-hidden bg-background">
       <NoteHeader note={note} saveNote={saveNote} canEdit={canEdit} />
       {renderContent()}
     </div>

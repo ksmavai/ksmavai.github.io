@@ -11,7 +11,7 @@ category: "today"
 
 ### Ottawa Transpo Widget
 
-- A WidgetKit-powered iOS app and widget integrating CoreLocation and GTFS-RT for real-time Ottawa transit departures, with intelligent inbound/outbound trip scheduling
+- A WidgetKit-powered iOS app and widget built in Swift,integrating CoreLocation and GTFS-RT for real-time Ottawa transit departures, with intelligent inbound/outbound trip scheduling
 
 ### Slouch
 
