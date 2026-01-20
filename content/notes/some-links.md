@@ -5,6 +5,7 @@ created_at: "2025-12-28T11:00:00Z"
 category: "pinned"
 ---
 
+- [Resume](/resume/Resume.pdf) - (Almost) everything you need to know about me
 - [Email](mailto:kshitijmavai@gmail.com) - I'm fairly active
 - [Github](https://github.com/ksmavai) - Pretty empty, I usually work on projects locally
 - [LinkedIn](https://linkedin.com/in/ksmavai) - Plan to be more active on it!
