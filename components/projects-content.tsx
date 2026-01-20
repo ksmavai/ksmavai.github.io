@@ -26,33 +26,52 @@ const projects: Project[] = [
         technical: "An in-progress cross-platform mobile app built with React Native, Expo, TypeScript, and Reanimated, using Supabase for authentication, real-time chat, and course-based peer matching",
         simple: "After my university cut their tutoring programs due to budgeting issues, I'm building this app to create a much more direct, peer-to-peer tutoring and social discovery platform with a better financial model for both students and tutors",
         images: [
-            { src: "/art/p02.jpg", alt: "Studysesh screenshot 1" },
-            { src: "/art/p04.jpg", alt: "Studysesh screenshot 2" },
-            { src: "/art/p06.jpg", alt: "Studysesh screenshot 3" },
-            { src: "/art/p08.jpg", alt: "Studysesh screenshot 4" },
-            { src: "/art/p10.jpg", alt: "Studysesh screenshot 5" },
-            { src: "/art/p12.jpg", alt: "Studysesh screenshot 6" },
+            { src: "/projects/studysesh/vid1.MP4", alt: "Studysesh demo 1" },
+            { src: "/projects/studysesh/vid2.MP4", alt: "Studysesh demo 2" },
+            { src: "/projects/studysesh/vid3.MP4", alt: "Studysesh demo 3" },
+            { src: "/projects/studysesh/vid4.MP4", alt: "Studysesh demo 4" },
+            { src: "/projects/studysesh/vid5.MP4", alt: "Studysesh demo 5" },
+            { src: "/projects/studysesh/vid6.MP4", alt: "Studysesh demo 6" },
+            { src: "/projects/studysesh/vid7.MP4", alt: "Studysesh demo 7" },
+            { src: "/projects/studysesh/vid3-5.MP4", alt: "Studysesh demo 8" },
         ]
     },
     {
         title: "Ottawa Transpo Widget",
         technical: "A WidgetKit-powered iOS app and widget built in Swift, integrating CoreLocation and GTFS-RT for real-time Ottawa transit departures, with intelligent inbound/outbound trip scheduling",
-        simple: "Instead of always opening Transit or other apps to check the bus, I wanted to see Ottawa bus departures directly from my home screen, so I made this widget to track them with the design inspired by LED screens in train terminals"
+        simple: "Instead of always opening Transit or other apps to check the bus, I wanted to see Ottawa bus departures directly from my home screen, so I made this widget to track them with the design inspired by LED screens in train terminals",
+        images: [
+            { src: "/projects/ottawa-transpo-widget/vid1.MP4", alt: "Ottawa widget demo 1" },
+            { src: "/projects/ottawa-transpo-widget/vid2.MP4", alt: "Ottawa widget demo 2" },
+            { src: "/projects/ottawa-transpo-widget/vid3.MP4", alt: "Ottawa widget demo 3" },
+        ]
     },
     {
         title: "Slouch",
         technical: "A privacy-first Chrome extension using TensorFlow.js and the MoveNet for real-time pose estimation tracking, applying CSS blur overlays when spinal alignment deviates from a user-calibrated baseline",
-        simple: "A looot of CS and Software Engineering friends of mine are always hunched over their laptops, so I made a fun extension that basically forces one to fix their posture"
+        simple: "A looot of CS and Software Engineering friends of mine are always hunched over their laptops, so I made a fun extension that basically forces one to fix their posture",
+        images: [
+            { src: "/projects/slouch/screenshot.png", alt: "Slouch screenshot" },
+            { src: "/projects/slouch/vid1.mp4", alt: "Slouch demo" },
+        ]
     },
     {
         title: "Academic Course Information System",
         technical: "A Python Discord bot hosted on Microsoft Azure serving 3,200+ users with PDF document watermarking, intelligent dual-LLM routing (DeepSeek/Perplexity) for conversational vs. real-time queries, and SQLite-backed note sharing with rate limiting and file integrity verification",
-        simple: "I run a Discord server I started in first year which has now grown to 3,200+ engineering students. I wanted a better way for them to learn about courses and share notes with secure watermarking (so notes don't end up on sites like StudoCu...), so I built this bot with some AI features for fun"
+        simple: "I run a Discord server I started in first year which has now grown to 3,200+ engineering students. I wanted a better way for them to learn about courses and share notes with secure watermarking (so notes don't end up on sites like StudoCu...), so I built this bot with some AI features for fun",
+        images: [
+            { src: "/projects/academic-course-info/vid1.mp4", alt: "Academic bot demo 1" },
+            { src: "/projects/academic-course-info/vid2.mp4", alt: "Academic bot demo 2" },
+            { src: "/projects/academic-course-info/vid3.mp4", alt: "Academic bot demo 3" },
+        ]
     },
     {
         title: "Automated Room Booking System",
         technical: "A dockerized Spring Boot microservice using Selenium for headless browser automation with a CI/CD pipeline for nightly cron-scheduled execution, implementing intelligent multi-day lookahead scheduling and dynamic DOM traversal for automated room bookings.",
-        simple: "Library rooms at my university get booked super fast, so I decided to automate the booking process on a nightly basis instead of doing it manually"
+        simple: "Library rooms at my university get booked super fast, so I decided to automate the booking process on a nightly basis instead of doing it manually",
+        images: [
+            { src: "/projects/room-booking/vid1.mp4", alt: "Room booking demo" },
+        ]
     },
     {
         title: "AI Assistant Web-App [Archived]",

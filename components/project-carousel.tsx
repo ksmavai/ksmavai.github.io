@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useMobileDetect } from "./mobile-detector";
 
 // Media item can be an image or a video
@@ -20,12 +20,23 @@ function isVideoFile(src: string): boolean {
     return videoExtensions.some(ext => src.toLowerCase().endsWith(ext));
 }
 
+// Size configurations based on aspect ratio
+const PORTRAIT_SIZES = { collapsed: 180, expanded: 320 };   // Vertical videos - slightly bigger
+const LANDSCAPE_SIZES = { collapsed: 320, expanded: 520 };  // Horizontal videos - much bigger
+
 export default function ProjectCarousel({ images }: ProjectCarouselProps) {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+    const [aspectRatios, setAspectRatios] = useState<Record<number, 'portrait' | 'landscape'>>({});
     const isMobile = useMobileDetect();
 
     const handleMediaClick = (index: number) => {
         setExpandedIndex(expandedIndex === index ? null : index);
+    };
+
+    // Callback when video/image dimensions are known
+    const handleMediaLoad = (index: number, width: number, height: number) => {
+        const ratio = width > height ? 'landscape' : 'portrait';
+        setAspectRatios(prev => ({ ...prev, [index]: ratio }));
     };
 
     if (images.length === 0) return null;
@@ -46,13 +57,18 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                         const isExpanded = expandedIndex === index;
                         const isVideo = media.type === 'video' || isVideoFile(media.src);
 
+                        // Determine size based on aspect ratio (default to portrait if not yet known)
+                        const isLandscape = aspectRatios[index] === 'landscape';
+                        const sizes = isLandscape ? LANDSCAPE_SIZES : PORTRAIT_SIZES;
+                        const width = isExpanded ? sizes.expanded : sizes.collapsed;
+
                         return (
                             <div
                                 key={index}
                                 onClick={() => handleMediaClick(index)}
                                 className="flex-none cursor-pointer transform-gpu snap-center"
                                 style={{
-                                    width: isExpanded ? '280px' : '160px',
+                                    width: `${width}px`,
                                     transition: 'width 0.6s cubic-bezier(0.34, 1.6, 0.64, 1)',
                                 }}
                             >
@@ -70,6 +86,10 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                                         muted
                                         playsInline
                                         draggable={false}
+                                        onLoadedMetadata={(e) => {
+                                            const video = e.currentTarget;
+                                            handleMediaLoad(index, video.videoWidth, video.videoHeight);
+                                        }}
                                     />
                                 ) : (
                                     // Image
@@ -83,6 +103,10 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                                             backgroundColor: 'rgba(0,0,0,0.02)'
                                         }}
                                         draggable={false}
+                                        onLoad={(e) => {
+                                            const img = e.currentTarget;
+                                            handleMediaLoad(index, img.naturalWidth, img.naturalHeight);
+                                        }}
                                     />
                                 )}
                             </div>
