@@ -37,20 +37,21 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                         key={index}
                         onClick={() => handleImageClick(index)}
                         className={`flex-shrink-0 cursor-pointer transition-all duration-500 ease-in-out overflow-hidden rounded-lg ${expandedIndex === index
-                                ? "w-full"
-                                : "w-48 md:w-56"
+                            ? "w-full"
+                            : "w-48 md:w-56"
                             }`}
                     >
                         <div
                             className={`relative transition-all duration-500 ease-in-out ${expandedIndex === index
-                                    ? "aspect-video w-full"
-                                    : "aspect-[16/10] w-full"
+                                ? "aspect-video w-full"
+                                : "aspect-[16/10] w-full"
                                 }`}
                         >
                             <Image
                                 src={image.src}
                                 alt={image.alt}
                                 fill
+                                unoptimized
                                 className="object-cover rounded-lg"
                                 sizes={expandedIndex === index ? "100vw" : "224px"}
                             />
@@ -73,6 +74,7 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                             src={images[expandedIndex].src}
                             alt={images[expandedIndex].alt}
                             fill
+                            unoptimized
                             className="object-contain rounded-lg bg-muted"
                             sizes="100vw"
                             priority
