@@ -31,7 +31,7 @@ const projects: Project[] = [
     },
     {
         title: "Ottawa Transpo Widget",
-        technical: "A WidgetKit-powered iOS app and widget integrating CoreLocation and GTFS-RT for real-time Ottawa transit departures, with intelligent inbound/outbound trip scheduling",
+        technical: "A WidgetKit-powered iOS app and widget built in Swift, integrating CoreLocation and GTFS-RT for real-time Ottawa transit departures, with intelligent inbound/outbound trip scheduling",
         simple: "Instead of always opening Transit or other apps to check the bus, I wanted to see Ottawa bus departures directly from my home screen, so I made this widget to track them with the design inspired by LED screens in train terminals"
     },
     {
