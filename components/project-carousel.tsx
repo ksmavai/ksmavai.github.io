@@ -22,8 +22,8 @@ function isVideoFile(src: string): boolean {
 }
 
 // Size configurations based on aspect ratio
-const PORTRAIT_SIZES = { collapsed: 180, expanded: 320 };   // Vertical videos - slightly bigger
-const LANDSCAPE_SIZES = { collapsed: 320, expanded: 520 };  // Horizontal videos - much bigger
+const PORTRAIT_SIZES = { collapsed: 180, expanded: 320 };   // Vertical videos
+const LANDSCAPE_SIZES = { collapsed: 400, expanded: 640 };  // Horizontal videos - MUCH bigger
 
 export default function ProjectCarousel({ images }: ProjectCarouselProps) {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
