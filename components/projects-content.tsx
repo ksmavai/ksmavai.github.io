@@ -104,7 +104,7 @@ function ProjectItem({ project }: ProjectItemProps) {
 
     return (
         <div className="mb-4">
-            <h3 className="text-base font-semibold mb-1 flex items-center gap-2">
+            <h3 className="text-base font-semibold mb-1 flex flex-wrap items-center gap-2">
                 {project.title}
                 <button
                     onClick={handleToggle}
@@ -133,7 +133,7 @@ function ProjectItem({ project }: ProjectItemProps) {
 export default function ProjectsContent() {
     return (
         <div className="px-2 text-base md:text-sm break-words">
-            <div className="markdown-body">
+            <div className="markdown-body max-w-full overflow-x-hidden">
                 {projects.map((project, index) => (
                     <ProjectItem key={index} project={project} />
                 ))}
