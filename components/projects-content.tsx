@@ -134,7 +134,7 @@ function ProjectItem({ project }: ProjectItemProps) {
 
 export default function ProjectsContent() {
     return (
-        <div className="px-2 text-base md:text-sm break-words">
+        <div className="pl-2 pr-16 text-base md:text-sm break-words">
             <div className="markdown-body">
                 {projects.map((project, index) => (
                     <ProjectItem key={index} project={project} />
