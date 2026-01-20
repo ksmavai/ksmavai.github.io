@@ -121,7 +121,7 @@ function ProjectItem({ project }: ProjectItemProps) {
                     {isSimple ? "technical" : "translate"}
                 </button>
             </h3>
-            <ul className="list-disc pl-5 mb-0" style={isMobile ? { maxWidth: '100%' } : { maxWidth: '540px' }}>
+            <ul className="list-disc pl-5 mb-0" style={isMobile ? { maxWidth: '100%' } : { maxWidth: '700px' }}>
                 <li className="text-sm pl-1" style={isMobile ? { overflowWrap: 'anywhere' } : undefined}>
                     {displayText}
                     {isAnimating && <span className="animate-pulse">|</span>}
