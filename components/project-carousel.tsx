@@ -83,12 +83,13 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                                         className="w-full h-auto block select-none shadow-sm"
                                         style={{
                                             borderRadius: '16px',
-                                            backgroundColor: 'rgba(0,0,0,0.02)'
+                                            backgroundColor: 'rgba(0,0,0,0.1)'
                                         }}
                                         autoPlay
                                         loop
                                         muted
                                         playsInline
+                                        preload="metadata"
                                         draggable={false}
                                         onLoadedMetadata={(e) => {
                                             const video = e.currentTarget;
