@@ -25,14 +25,23 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
     if (images.length === 0) return null;
 
     return (
-        <div className="mt-3 mb-2 overflow-hidden">
-            {/* Horizontal scroll container - contained within parent width */}
+        <div
+            className="mt-3 mb-2 w-full"
+            style={{
+                overflow: 'hidden',
+                maxWidth: '100%',
+            }}
+        >
+            {/* Horizontal scroll container - strictly contained */}
             <div
-                className="flex gap-3 overflow-x-auto pb-2 -mx-2 px-2"
+                className="flex gap-3 pb-2"
                 style={{
+                    overflowX: 'auto',
+                    overflowY: 'hidden',
                     scrollbarWidth: 'none',
                     msOverflowStyle: 'none',
-                    WebkitOverflowScrolling: 'touch'
+                    WebkitOverflowScrolling: 'touch',
+                    maxWidth: '100%',
                 }}
             >
                 {images.map((image, index) => {
@@ -42,27 +51,27 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                         <div
                             key={index}
                             onClick={() => handleImageClick(index)}
-                            className="flex-shrink-0 cursor-pointer overflow-hidden"
+                            className="flex-shrink-0 cursor-pointer"
                             style={{
-                                width: isExpanded ? '280px' : '180px',
-                                transition: 'width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                                width: isExpanded ? '260px' : '160px',
+                                transition: 'width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                             }}
                         >
                             <div
                                 className="w-full overflow-hidden"
-                                style={{
-                                    borderRadius: '16px',
-                                }}
+                                style={{ borderRadius: '14px' }}
                             >
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={image.src}
                                     alt={image.alt}
-                                    className="w-full h-auto object-cover"
+                                    className="w-full h-auto block"
                                     style={{
-                                        borderRadius: '16px',
-                                        display: 'block',
+                                        borderRadius: '14px',
+                                        maxHeight: '200px',
+                                        objectFit: 'cover',
                                     }}
+                                    draggable={false}
                                 />
                             </div>
                         </div>
