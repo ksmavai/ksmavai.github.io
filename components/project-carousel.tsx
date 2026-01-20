@@ -29,7 +29,7 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                 <div
                     className="flex gap-4 items-center overflow-x-auto pb-8 -mb-8 snap-x snap-mandatory hide-scrollbar"
                     style={{
-                        paddingLeft: '16px',
+                        paddingLeft: '24px',
                         paddingRight: '16px',
                     }}
                 >
