@@ -25,7 +25,7 @@ const ScrollArea = React.forwardRef<
     className={cn("relative overflow-hidden", className)}
     {...props}
   >
-    <ScrollAreaPrimitive.Viewport className="h-full w-full rounded-[inherit]">
+    <ScrollAreaPrimitive.Viewport className="h-full w-full rounded-[inherit] overflow-x-hidden">
       {children}
     </ScrollAreaPrimitive.Viewport>
     <ScrollBar withVerticalMargins={withVerticalMargins} mobileHeaderHeight={mobileHeaderHeight} isMobile={isMobile} />
@@ -51,26 +51,26 @@ const ScrollBar = React.forwardRef<
       "opacity-80 hover:opacity-100",
       "bg-transparent hover:border-l hover:border-gray-200 dark:hover:border-gray-700",
       orientation === "vertical" &&
-        cn(
-          isMobile ? "w-[8px]" : "w-[10px] hover:w-[14px]",
-          withVerticalMargins && mobileHeaderHeight
-            ? "mt-24 mb-16"
-            : withVerticalMargins
+      cn(
+        isMobile ? "w-[8px]" : "w-[10px] hover:w-[14px]",
+        withVerticalMargins && mobileHeaderHeight
+          ? "mt-24 mb-16"
+          : withVerticalMargins
             ? "my-16"
             : ""
-        ),
+      ),
       orientation === "horizontal" &&
-        "h-2.5 flex-col border-t border-t-transparent p-[1px]",
+      "h-2.5 flex-col border-t border-t-transparent p-[1px]",
       className
     )}
     {...props}
   >
-    <ScrollAreaPrimitive.ScrollAreaThumb 
+    <ScrollAreaPrimitive.ScrollAreaThumb
       className={cn(
         "relative flex-1 rounded-full transition-colors duration-200",
         "border-2 border-solid border-transparent bg-clip-padding",
         "bg-gray-500 dark:bg-gray-400"
-      )} 
+      )}
     />
   </ScrollAreaPrimitive.ScrollAreaScrollbar>
 ))

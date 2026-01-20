@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 interface CarouselImage {
     src: string;
@@ -13,7 +13,6 @@ interface ProjectCarouselProps {
 
 export default function ProjectCarousel({ images }: ProjectCarouselProps) {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-    const scrollRef = useRef<HTMLDivElement>(null);
 
     const handleImageClick = (index: number) => {
         if (expandedIndex === index) {
@@ -26,46 +25,57 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
     if (images.length === 0) return null;
 
     return (
-        <div className="mt-3 mb-2 w-full overflow-hidden">
+        <div className="mt-3 mb-2">
+            {/* Outer clip container - extends to edges for proper clipping */}
             <div
-                ref={scrollRef}
-                className="carousel-scroll flex gap-3 pb-2 overflow-x-scroll"
                 style={{
-                    WebkitOverflowScrolling: 'touch',
+                    marginLeft: '-8px',
+                    marginRight: '-8px',
+                    overflow: 'hidden',
                 }}
             >
-                {images.map((image, index) => {
-                    const isExpanded = expandedIndex === index;
+                {/* Inner scroll container with padding restored */}
+                <div
+                    className="flex gap-3 pb-2"
+                    style={{
+                        overflowX: 'auto',
+                        paddingLeft: '8px',
+                        paddingRight: '8px',
+                        scrollbarWidth: 'none',
+                        msOverflowStyle: 'none',
+                        WebkitOverflowScrolling: 'touch',
+                    }}
+                >
+                    {images.map((image, index) => {
+                        const isExpanded = expandedIndex === index;
 
-                    return (
-                        <div
-                            key={index}
-                            onClick={() => handleImageClick(index)}
-                            className="flex-shrink-0 cursor-pointer"
-                            style={{
-                                width: isExpanded ? '240px' : '150px',
-                                transition: 'width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                            }}
-                        >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src={image.src}
-                                alt={image.alt}
-                                className="w-full h-auto block"
-                                style={{ borderRadius: '12px' }}
-                                draggable={false}
-                            />
-                        </div>
-                    );
-                })}
+                        return (
+                            <div
+                                key={index}
+                                onClick={() => handleImageClick(index)}
+                                className="flex-none cursor-pointer"
+                                style={{
+                                    width: isExpanded ? '260px' : '160px',
+                                    minWidth: isExpanded ? '260px' : '160px',
+                                    transition: 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                                }}
+                            >
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className="w-full h-auto block select-none"
+                                    style={{ borderRadius: '12px' }}
+                                    draggable={false}
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
 
             <style jsx>{`
-                .carousel-scroll {
-                    scrollbar-width: none;
-                    -ms-overflow-style: none;
-                }
-                .carousel-scroll::-webkit-scrollbar {
+                div::-webkit-scrollbar {
                     display: none;
                 }
             `}</style>
