@@ -25,11 +25,15 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
     if (images.length === 0) return null;
 
     return (
-        <div className="mt-3 mb-2">
-            {/* Horizontal scroll container */}
+        <div className="mt-3 mb-2 overflow-hidden">
+            {/* Horizontal scroll container - contained within parent width */}
             <div
-                className="flex gap-3 overflow-x-auto pb-2"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                className="flex gap-3 overflow-x-auto pb-2 -mx-2 px-2"
+                style={{
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none',
+                    WebkitOverflowScrolling: 'touch'
+                }}
             >
                 {images.map((image, index) => {
                     const isExpanded = expandedIndex === index;
@@ -38,22 +42,39 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                         <div
                             key={index}
                             onClick={() => handleImageClick(index)}
-                            className={`flex-shrink-0 cursor-pointer transition-all duration-300 ease-in-out overflow-hidden rounded-xl ${isExpanded ? "w-80 md:w-96" : "w-48 md:w-56"
-                                }`}
+                            className="flex-shrink-0 cursor-pointer overflow-hidden"
+                            style={{
+                                width: isExpanded ? '280px' : '180px',
+                                transition: 'width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                            }}
                         >
-                            {/* Force landscape aspect ratio */}
-                            <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
+                            <div
+                                className="w-full overflow-hidden"
+                                style={{
+                                    borderRadius: '16px',
+                                }}
+                            >
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={image.src}
                                     alt={image.alt}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-auto object-cover"
+                                    style={{
+                                        borderRadius: '16px',
+                                        display: 'block',
+                                    }}
                                 />
                             </div>
                         </div>
                     );
                 })}
             </div>
+
+            <style jsx>{`
+                div::-webkit-scrollbar {
+                    display: none;
+                }
+            `}</style>
         </div>
     );
 }

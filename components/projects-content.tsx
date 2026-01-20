@@ -24,6 +24,9 @@ const projects: Project[] = [
             { src: "/art/p02.jpg", alt: "Studysesh screenshot 1" },
             { src: "/art/p04.jpg", alt: "Studysesh screenshot 2" },
             { src: "/art/p06.jpg", alt: "Studysesh screenshot 3" },
+            { src: "/art/p08.jpg", alt: "Studysesh screenshot 4" },
+            { src: "/art/p10.jpg", alt: "Studysesh screenshot 5" },
+            { src: "/art/p12.jpg", alt: "Studysesh screenshot 6" },
         ]
     },
     {
