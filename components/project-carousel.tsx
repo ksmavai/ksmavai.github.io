@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 interface CarouselImage {
     src: string;
@@ -47,13 +46,11 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
                                 : "aspect-[16/10] w-full"
                                 }`}
                         >
-                            <Image
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
                                 src={image.src}
                                 alt={image.alt}
-                                fill
-                                unoptimized
-                                className="object-cover rounded-lg"
-                                sizes={expandedIndex === index ? "100vw" : "224px"}
+                                className="w-full h-full object-cover rounded-lg"
                             />
                         </div>
                     </div>
@@ -67,17 +64,14 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
             >
                 {expandedIndex !== null && (
                     <div
-                        className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer"
+                        className="relative w-full aspect-video rounded-lg overflow-hidden cursor-pointer bg-muted"
                         onClick={() => setExpandedIndex(null)}
                     >
-                        <Image
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                             src={images[expandedIndex].src}
                             alt={images[expandedIndex].alt}
-                            fill
-                            unoptimized
-                            className="object-contain rounded-lg bg-muted"
-                            sizes="100vw"
-                            priority
+                            className="w-full h-full object-contain rounded-lg"
                         />
                     </div>
                 )}
