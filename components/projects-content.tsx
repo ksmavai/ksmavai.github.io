@@ -4,16 +4,20 @@ import { useState, useCallback } from "react";
 import ProjectCarousel from "./project-carousel";
 import { useMobileDetect } from "./mobile-detector";
 
-interface CarouselImage {
+// Media item can be an image or a video
+// Drop files in: /public/projects/{project-slug}/
+// Then reference them as: /projects/{project-slug}/filename.jpg
+interface CarouselMedia {
     src: string;
     alt: string;
+    type?: 'image' | 'video'; // Optional - auto-detected from extension if not specified
 }
 
 interface Project {
     title: string;
     technical: string;
     simple: string;
-    images?: CarouselImage[];
+    images?: CarouselMedia[];
 }
 
 const projects: Project[] = [
@@ -42,7 +46,7 @@ const projects: Project[] = [
     },
     {
         title: "Academic Course Information System",
-        technical: "An Python Discord bot hosted on Microsoft Azure serving 3,200+ users with PDF document watermarking, intelligent dual-LLM routing (DeepSeek/Perplexity) for conversational vs. real-time queries, and SQLite-backed note sharing with rate limiting and file integrity verification",
+        technical: "A Python Discord bot hosted on Microsoft Azure serving 3,200+ users with PDF document watermarking, intelligent dual-LLM routing (DeepSeek/Perplexity) for conversational vs. real-time queries, and SQLite-backed note sharing with rate limiting and file integrity verification",
         simple: "I run a Discord server I started in first year which has now grown to 3,200+ engineering students. I wanted a better way for them to learn about courses and share notes with secure watermarking (so notes don't end up on sites like StudoCu...), so I built this bot with some AI features for fun"
     },
     {
