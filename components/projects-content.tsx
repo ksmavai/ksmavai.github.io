@@ -104,7 +104,7 @@ function ProjectItem({ project }: ProjectItemProps) {
 
     return (
         <div className="mb-4">
-            <h3 className="text-base font-semibold mb-1 flex items-center gap-2">
+            <h3 className="text-base font-semibold mb-1 flex flex-wrap md:flex-nowrap items-center gap-2">
                 {project.title}
                 <button
                     onClick={handleToggle}
